@@ -4,8 +4,12 @@
     --red-color:#F3797E;
     --black-color: #000;
     --text-color: #1f1f1f;
-
-
+    --navbar-height:58px;
+    --icon-color: #6c7383;
+    --success-color: #57b657;
+    --warning-color:#ffc100;
+    --danger-color:#ff4747;
+    --default-color: #248afd;
 }
 *{
     margin: 0;
@@ -18,4 +22,13 @@ html{
     line-height: 1.6rem;
     font-family: 'Nunito', sans-serif;
     box-sizing: border-box;
+}
+.noti-icon--success{
+    color: var(--success-color);
+}
+.noti-icon--warning{
+    color: var(--warning-color);
+}
+.noti-icon--default{
+    color: var(--default-color);
 }
