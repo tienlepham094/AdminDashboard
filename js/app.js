@@ -2,6 +2,12 @@ const sidebarItem= document.querySelectorAll('.sb-item')
 const sidebarArrow = document.querySelectorAll('.sb-icon-arrow')
 const sidebarList= document.querySelectorAll('.sb-list-container')
 const navToggleBtn= document.querySelector('.toggle-line-icon')
+const sidebarContainer=document.querySelector('.sidebar-container')
+const sideBar= document.querySelector('.sidebar')
+const sideBarIcon=document.querySelector('.sidebar-s')
+const navbarLogo= document.querySelector('.navbar-logo')
+const navbarLogoS=document.querySelector('.navbar-logo-s')
+const main =document.querySelector('.main')
 // sidebar
 for(let i =1; i<=2; i++){
     sidebarItem[i].onclick=()=>{
@@ -11,7 +17,6 @@ for(let i =1; i<=2; i++){
             sidebarList[i-1].style.maxHeight=null;
         }else{
             sidebarList[i-1].style.maxHeight= sidebarList[i-1].scrollHeight + 'px';
-            // sidebarList[i-1].style.maxHeight= 86 + 'px';
         }
     }
 }
@@ -20,13 +25,25 @@ var isOpen=false;
 navToggleBtn.addEventListener('click', ()=>{
 
     if(!isOpen){
-        console.log(12);
-        navToggleBtn.classList.add('toggle-line-icon--active')
-        // navToggleBtn.style.transform='rotate(360deg)'
+        sidebarContainer.style.width='var(--sidebar-s-width)'
+        navToggleBtn.classList.remove('toggle-down')
+        navToggleBtn.classList.add('toggle-up')
+        sideBar.classList.add('sidebar--hide')
+        sideBarIcon.classList.remove('sidebar--hide')
+        navbarLogo.classList.add('sidebar--hide')
+        navbarLogoS.classList.remove('sidebar--hide')
+        main.style.left="var(--sidebar-s-width)"
         isOpen=true;
     }else{
-        console.log(123);
-        navToggleBtn.style.transform='rotate(360deg)'
+        sidebarContainer.style.width='var(--sidebar-width)'
+        navToggleBtn.classList.remove('toggle-up')
+        navToggleBtn.classList.add('toggle-down')
+        sideBar.classList.remove('sidebar--hide')
+        sideBarIcon.classList.add('sidebar--hide')
+        navbarLogo.classList.remove('sidebar--hide')
+        navbarLogoS.classList.add('sidebar--hide')
+        main.style.left="var(--sidebar-width)"
         isOpen=false;
     }
 })
+//sidebar icon only
