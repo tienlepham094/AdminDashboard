@@ -133,6 +133,7 @@
     padding-top: 10px;
     border-radius: 5px;
     min-width: 270px;
+    background-color: var(--white-color);
 }
 
 .navbar-noti-btn::after{
