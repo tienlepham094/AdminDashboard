@@ -3,13 +3,18 @@
     --blue-color: #7DA0FA;
     --red-color:#F3797E;
     --black-color: #000;
+    --white-color: #fff;
     --text-color: #1f1f1f;
-    --navbar-height:58px;
     --icon-color: #6c7383;
     --success-color: #57b657;
     --warning-color:#ffc100;
     --danger-color:#ff4747;
     --default-color: #248afd;
+
+
+
+    --navbar-height:58px;
+    --sidebar-width: 236px;
 }
 *{
     margin: 0;
