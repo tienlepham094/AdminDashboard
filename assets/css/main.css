@@ -29,6 +29,9 @@
     width: 140px;
     margin-right: 130px;
 }
+.toggle-line-icon{
+    transition: rotate 0.5s ease-out;
+}
 .navbar-toggle-line,
 .search-btn{
     padding-right:20px;
@@ -170,6 +173,7 @@
     color: var(--icon-color);
     padding: 15px;
     margin-bottom: 6px;
+
 }
 .sb-item:hover{
     background-color: var(--primary-color);
@@ -183,21 +187,33 @@
 .sidebar--active{
     background-color: var(--primary-color);
     color: var(--white-color);
+    display: block;
 }
 .sb-icon-arrow{
     font-size: 1.3rem;
     left: 2px;
+    transition: ease-in 0.2s;
 }
-.user-lists{
+.sb-icon-arrow--active{
+    transform: rotate(90deg);
+}
+.sb-list-container{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.sidebar-lists{
     padding-top: 10px;
 }
-.user-link{
+
+.sidebar-link{
     text-decoration: none;
     color: var(--white-color);
     display: block;
     padding: 10px 0px 10px 45px;
 }
-.user-link:last-child{
+.sidebar-link:last-child{
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
