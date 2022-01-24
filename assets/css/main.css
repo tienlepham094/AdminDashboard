@@ -323,11 +323,60 @@
 /*body content css*/
 .main{
     position: relative;
+    top: 40px;
     left: var(--sidebar-width);
-    z-index: -1;
     background-color: #F5F7FF;
-    width: 100%;
+    width: calc(100% - var(--sidebar-width));
     height: 1000px;
 }
+.wrapper{
+    padding: 42.75px;
+}
+/*welcome area css*/
+.header-welcome{
+    color: var(--text-color);
+    font-size: 1.6rem;
+}
+.header-welcome-title{
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+.selection{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.select-container{
+    position: relative;
+    width: 200px;
+    font-size: 1.4rem;
+    background-color: var(--white-color);
+    color: #212529;
+    border-radius: 15px;
+}
+.select-header{
+    border-radius: 15px;
+    cursor: pointer;
+    padding:9px 15px ;
+}
 
-
+.select-icon{
+    margin-left: 5px;
+}
+.option-container{
+    border-radius: 5px;
+    border: 1px solid #CED4DA;
+    top: 40px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-color: var(--white-color);
+    display: none;
+}
+.select-option{
+    padding:10px 15px ;
+}
+.select-option:hover{
+    background-color: #e8eff4;
+}
