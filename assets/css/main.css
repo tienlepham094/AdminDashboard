@@ -1,3 +1,4 @@
+
 /*navbar css*/
 .header{
     position: fixed;
@@ -8,8 +9,8 @@
     background-color: var(--white-color);
 }
 .navbar{
-    display: flex;
     height: var(--navbar-height);
+    display: flex;
     padding: 10px 20px;
     justify-content: space-between;
     box-shadow: 0px 5px 21px -5px #cdd1e1;
@@ -105,14 +106,14 @@
     padding: 0 20px;
     cursor: pointer;
 }
-.navbar-noti-btn{
+.navbar-right{
     position: relative;
-}
-.navbar-noti-btn:hover .navbar-noti{
-    display: block;
 }
 .noti-btn-icon{
     margin-right: 20px;
+}
+.navbar-noti-btn{
+    position: relative;
 }
 .navbar-noti-btn::before{
     content: "";
@@ -123,27 +124,30 @@
     position: absolute;
     top: -3px;
     left: 8px;
+    
 }
 .navbar-noti{
     display: none;
     position: absolute;
-    top: 50px;
-    right: 16px;
+    top:calc(var(--navbar-height) - 10px);
+    right: 0;
     box-shadow: 0px 3px 21px 0px rgb(0 0 0 / 20%);
     padding-top: 10px;
     border-radius: 5px;
     min-width: 270px;
     background-color: var(--white-color);
 }
-
-.navbar-noti-btn::after{
+.navbar-noti-container{
+    position: relative;
+}
+.navbar-noti-container::after{
     content: "";
     display: block;
     position: absolute;
-    height: 50px;
+    height: 40px;
     top: 20px;
     right: 10px;
-    width: 50px;
+    width: 100px;
 }
 .navbar-noti-title{
     font-size: 1.5rem;
@@ -158,10 +162,10 @@
     display: block;
     font-size: 1.6rem;
     color: var(--text-color);
-
+    
 }
 .navbar-noti-link:hover{
-     background-color: #e8eff4;
+    background-color: #e8eff4;
 }
 .navbar-noti-item{
     list-style: none;
@@ -180,6 +184,9 @@
 }
 .noti-item-icon{
     font-size: 2rem;
+}
+.navbar-noti--active{
+    display: block;
 }
 /*side bar css*/
 .sidebar--hide{
@@ -330,7 +337,7 @@
     height: 1000px;
 }
 .wrapper{
-    padding: 42.75px;
+    padding: 35px;
 }
 /*welcome area css*/
 .header-welcome{
@@ -342,14 +349,13 @@
     font-weight: 700;
     margin-bottom: 14px;
 }
-.selection{
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
+.header-welcome-msg{
+    font-size: 1.4rem;
 }
+
 .select-container{
-    position: relative;
     width: 200px;
+    position: relative;
     font-size: 1.4rem;
     background-color: var(--white-color);
     color: #212529;
@@ -376,7 +382,11 @@
 }
 .select-option{
     padding:10px 15px ;
+    cursor: pointer;
 }
 .select-option:hover{
     background-color: #e8eff4;
+}
+.header-welcome-alert{
+    color: var(--primary-color);
 }

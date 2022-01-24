@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/grid/bootstrap-grid.css">
     <link rel="stylesheet" href="assets/grid/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -22,13 +23,13 @@
                 <nav class="navbar">
                     <div class="navbar-left">
                         <a href="#" class="navbar-img-link">
-                            <img src="assets/img/logo.svg" alt="logo" class="navbar-logo ">
-                            <img src="assets/img/logo-mini.svg" alt="" class="navbar-logo-s sidebar--hide">
+                            <img src="assets/img/logo.svg" alt="logo" class="navbar-logo hide-on-mobile-tablet ">
+                            <img src="assets/img/logo-mini.svg" alt="" class="navbar-logo-s sidebar--hide show-on-mobile-tablet">
                         </a>
-                        <div class="navbar-toggle-line">
+                        <div class="navbar-toggle-line hide-on-mobile-tablet">
                             <i class="fas fa-grip-lines toggle-line-icon"></i>
                         </div>
-                        <div class="navbar-search">
+                        <div class="navbar-search hide-on-mobile-tablet">
                             <div class="search-btn">
                                 <i class="fas fa-search search-btn-icon"></i>
                             </div>
@@ -36,49 +37,52 @@
                         </div>
                     </div>
                     <div class="navbar-right">
-                        <div class="navbar-noti-btn">
-                            <i class="far fa-bell noti-btn-icon"></i>
-                            <ul class="navbar-noti">
-                            <p class="navbar-noti-title">Notifications</p>
-                            <a href="" class="navbar-noti-link">
-                                <li class="navbar-noti-item">
-                                    <div>
-                                        <i class="fas fa-info-circle noti-item-icon noti-icon--success"></i>
-                                    </div>
-                                    <div class="navbar-content">
-                                        <div class="noti-item-msg">Application Error</div>
-                                        <span class="noti-item-status">Just now</span>
-                                    </div>
-                                </li>
-                            </a>
-                            <a href="" class="navbar-noti-link">
-                                <li class="navbar-noti-item">
-                                    <div>
-                                        <i class="fas fa-times-circle noti-item-icon noti-icon--warning"></i>
-                                    </div>
-                                    <div class="navbar-content">
-                                        <div class="noti-item-msg">Settings</div>
-                                        <span class="noti-item-status">Just now</span>
-                                    </div>
-                                </li>
-                            </a>
-                            <a href="" class="navbar-noti-link">
-                                <li class="navbar-noti-item">
-                                    <div>
-                                        <i class="fas fa-user-circle noti-item-icon noti-icon--default"></i>
-                                    </div>
-                                    <div class="navbar-content">
-                                        <div class="noti-item-msg">Application Error</div>
-                                        <span class="noti-item-status">Just now</span>
-                                    </div>
-                                </li>
-                            </a>
-                            </ul>
+                        <div class="navbar-noti-container">
+                            <div class="navbar-noti-btn">
+                                <i class="far fa-bell noti-btn-icon"></i>
+                            </div>
+                                <ul class="navbar-noti">
+                                <p class="navbar-noti-title">Notifications</p>
+                                <a href="" class="navbar-noti-link">
+                                    <li class="navbar-noti-item">
+                                        <div>
+                                            <i class="fas fa-info-circle noti-item-icon noti-icon--success"></i>
+                                        </div>
+                                        <div class="navbar-content">
+                                            <div class="noti-item-msg">Application Error</div>
+                                            <span class="noti-item-status">Just now</span>
+                                        </div>
+                                    </li>
+                                </a>
+                                <a href="" class="navbar-noti-link">
+                                    <li class="navbar-noti-item">
+                                        <div>
+                                            <i class="fas fa-times-circle noti-item-icon noti-icon--warning"></i>
+                                        </div>
+                                        <div class="navbar-content">
+                                            <div class="noti-item-msg">Settings</div>
+                                            <span class="noti-item-status">Just now</span>
+                                        </div>
+                                    </li>
+                                </a>
+                                <a href="" class="navbar-noti-link">
+                                    <li class="navbar-noti-item">
+                                        <div>
+                                            <i class="fas fa-user-circle noti-item-icon noti-icon--default"></i>
+                                        </div>
+                                        <div class="navbar-content">
+                                            <div class="noti-item-msg">Application Error</div>
+                                            <span class="noti-item-status">Just now</span>
+                                        </div>
+                                    </li>
+                                </a>
+                                </ul>
+
                         </div>
                         <div class="navbar-ava">
                             <img src="https://cdn.dribbble.com/users/1338391/screenshots/15264109/media/1febee74f57d7d08520ddf66c1ff4c18.jpg?compress=1&resize=400x300&vertical=top" alt="" class="ava-img">
                         </div>
-                        <div class="navbar-toggle-dots">
+                        <div class="navbar-toggle-dots hide-on-mobile-tablet">
                             <i class="fas fa-ellipsis-h toggle-dots-icon"></i>
                         </div>
                     </div>
@@ -86,7 +90,7 @@
             </div>
         <!--Body-->
                 <!--side bar-->
-                <div class="sidebar-container ">
+                <div class="sidebar-container hide-on-mobile-tablet ">
                     <nav class="sidebar">
                         <div class="sb-item sidebar--active">
                             <i class="fas fa-th-large sb-icon"></i>
@@ -175,25 +179,27 @@
                 <!--body content-->
                 <div class="main">
                     <div class="wrapper">
-                        <!--Welcom area-->
-                        <div class="row">
-                            <div class="header-welcome col-md-6 col-12">
-                                <h2 class="header-welcome-title">Welcome Aamir</h2>
-                                <p class="header-welcome-msg">All systems are running smoothly! You have <span class="header-welcome-alert">3 unread alerts</span></p>
-                            </div>
-                            <div class="header-selection col-md-6 col-12">
-                                <div class="selection" >
-                                    <div class="select-container">
-                                        <div class="select-header">
-                                            Today (10 Jan 2021)
-                                            <i class="fas fa-chevron-down select-icon"></i>
+                        <!--Welcome area-->
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="header-welcome col-lg-10 col-12">
+                                    <h2 class="header-welcome-title">Welcome Aamir</h2>
+                                    <p class="header-welcome-msg">All systems are running smoothly! You have <span class="header-welcome-alert">3 unread alerts</span></p>
+                                </div>
+                                <div class="header-selection col-lg-2 col-12">
+                                    <div class="select-section">
+                                        <div class="select-container">
+                                            <div class="select-header">
+                                                Today (10 Jan 2021)
+                                                <i class="fas fa-chevron-down select-icon"></i>
+                                            </div>
+                                            <div class="option-container">
+                                                <div class="select-option">January - March</div>
+                                                <div class="select-option">March - June</div>
+                                                <div class="select-option">June - August</div>
+                                                <div class="select-option">August - November</div>
                                         </div>
-                                        <div class="option-container">
-                                            <div class="select-option">January - March</div>
-                                            <div class="select-option">March - June</div>
-                                            <div class="select-option">June - August</div>
-                                            <div class="select-option">August - November</div>
-                                        </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -202,5 +208,6 @@
                 </div>
     </div>
     <script src="js/app.js"></script>
+    <script src="js/responsive.js"></script>
 </body>
 </html>
