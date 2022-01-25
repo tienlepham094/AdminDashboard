@@ -1,5 +1,6 @@
 
 /*navbar css*/
+
 .header{
     position: fixed;
     z-index: 1000 !important;
@@ -50,7 +51,9 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
 }
-
+.navbar-toggle-mobile{
+    padding: 10px;
+}
 /*animations*/
 @keyframes toggle-up {
     100% {
@@ -69,7 +72,8 @@
 .toggle-line-icon,
 .search-btn-icon,
 .navbar-noti-btn,
-.toggle-dots-icon{
+.toggle-dots-icon,
+.toggle-line-mobile{
     font-size: 2rem;
     color: var(--icon-color);
     cursor: pointer;
@@ -188,6 +192,8 @@
 .navbar-noti--active{
     display: block;
 }
+
+
 /*side bar css*/
 .sidebar--hide{
     display: none;
@@ -195,19 +201,15 @@
 .sidebar-container{
     background-color: var(--white-color);
     position: absolute;
-    width: var(--sidebar-width);
     top: var(--navbar-height);
+    width: var(--sidebar-width);
     left: 0;
     bottom: 0;
     z-index: 10;
-    transition: 0.1s linear;
+    transition: 0.2s linear;
 }
 .sidebar{
-    /* position: absolute;
-    top: var(--navbar-height);
-    left: 0;
-    bottom: 0;
-    z-index: 10; */
+    width: var(--sidebar-width);
     padding: 32px 18px;
 }
 
@@ -268,14 +270,7 @@
 }
 /*sidebar s css*/
 .sidebar-s{
-    /* position: absolute;
-    top: var(--navbar-height);
-    width: var(--sidebar-width);
-    left: 0;
-    bottom: 0;
-    z-index: 10; */
     padding-top: 26px;
-
 }
 .sidebar-s-element{
     position: relative;
