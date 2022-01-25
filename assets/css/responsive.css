@@ -3,6 +3,7 @@
     .navbar-noti-container:hover .navbar-noti{
         display: block;
     }
+
 }
 /*Mobile and tablet*/
 @media (max-width:1023px){
@@ -19,7 +20,9 @@
     .select-container{
         margin-top: 20px;
     }
-
+    .navbar-toggle-mobile{
+        display: block;
+    }
     .navbar-noti{
         position: fixed;
         right: 0;
@@ -39,13 +42,14 @@
         }
     }
     .sidebar-container{
-        right:0; 
-        left: calc(100% - var(--sidebar-width)); 
+        width: 0;
+        right: 0;
         transform: translateX(100%);
         transition: transform 0.4s ease-out;
     }
     .sidebar-container--active{
         transform: translateX(0); 
+        width: var(--sidebar-width);
     }
 }
 /*Tablet*/
@@ -56,6 +60,15 @@
     .wrapper{
         padding:32px 25px 0 25px;
     }
+    .card-number{
+        margin-bottom: 9px;
+    }
+    .card-area{
+        margin-bottom: 10px;
+    }
+    .people-banner-content{
+        top: -70px;
+    }
 }
 /*Mobile*/
 @media (max-width:739px){
@@ -63,11 +76,17 @@
         display:none;
     }
     .wrapper{
-        padding:27px 20px 0 20px;
+        padding:27px 10px 0 10px;
     }
     .select-section{
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+    }
+    .card-area{
+        margin-bottom: 0;
+    }
+    .col-mg{
+        margin-bottom: 20px;
     }
 }

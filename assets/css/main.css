@@ -1,6 +1,8 @@
 
 /*navbar css*/
-
+/* .app{
+    overflow: hidden;
+} */
 .header{
     position: fixed;
     z-index: 1000 !important;
@@ -53,6 +55,7 @@
 }
 .navbar-toggle-mobile{
     padding: 10px;
+    display: none;
 }
 /*animations*/
 @keyframes toggle-up {
@@ -200,13 +203,12 @@
 }
 .sidebar-container{
     background-color: var(--white-color);
-    position: absolute;
-    top: var(--navbar-height);
     width: var(--sidebar-width);
-    left: 0;
+    position: fixed;
     bottom: 0;
     z-index: 10;
     transition: 0.2s linear;
+    top: var(--navbar-height);
 }
 .sidebar{
     width: var(--sidebar-width);
@@ -325,16 +327,18 @@
 /*body content css*/
 .main{
     position: relative;
-    top: 40px;
+    top: var(--navbar-height);
     left: var(--sidebar-width);
     background-color: #F5F7FF;
     width: calc(100% - var(--sidebar-width));
-    height: 1000px;
 }
 .wrapper{
     padding: 35px;
 }
 /*welcome area css*/
+.welcome-area{
+    margin-bottom: 70px;
+}
 .header-welcome{
     color: var(--text-color);
     font-size: 1.6rem;
@@ -366,6 +370,7 @@
     margin-left: 5px;
 }
 .option-container{
+    z-index: 10;
     border-radius: 5px;
     border: 1px solid #CED4DA;
     top: 40px;
@@ -384,4 +389,87 @@
 }
 .header-welcome-alert{
     color: var(--primary-color);
+}
+/*Banner*/
+.people-banner-bg{
+    background-color: #DAE7FF;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.people-banner-container{
+    position: relative;
+    margin-top: auto;
+}
+.people-banner-img{
+    border-radius: 15px;
+    width: 100%;
+    vertical-align: middle;
+    object-fit:cover;
+}
+.people-banner-content{
+    position: absolute;
+    top: 10%;
+    color: var(--text-color);
+    display: flex;
+    right: 24px;
+    
+}
+.people-banner-degree{
+    display: flex;
+    align-items: center;
+    font-size: 3.2rem;
+    font-size: 300;
+    margin-right: 30px;
+}
+.people-banner-title{
+    margin-left: 10px;
+    position: relative;
+}
+.people-banner-title::after{
+    content: 'C';
+    position: absolute;
+    font-size: 1.8rem;
+    top: -2px;
+}
+.people-banner-location{
+    font-size: 2rem;
+    font-weight: 300;
+}
+.location-content{
+    margin-bottom: 4px;
+}
+/*card css*/
+.card-area{
+    margin-bottom: 50px;
+}
+.card-container{
+    min-height: 160px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:#7978E9;
+    color: var(--white-color);
+    font-size: 1.6rem;
+    padding: 30px 22.5px;
+}
+.card-number{
+    font-size: 3rem;
+    margin-top: 27px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.card-percentage{
+    margin-bottom: 9px;
+    font-size: 1.4rem;
+}
+.card-primary{
+    background-color: var(--primary-color);
+}
+.card-blue{
+    background-color: var(--blue-color);
+}
+.card-red{
+    background-color: var(--red-color);
 }
