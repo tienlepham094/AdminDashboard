@@ -3,18 +3,22 @@ const sidebarArrow = document.querySelectorAll('.sb-icon-arrow')
 const sidebarList= document.querySelectorAll('.sb-list-container')
 const navToggleBtn= document.querySelector('.toggle-line-icon')
 const sidebarContainer=document.querySelector('.sidebar-container')
-const sideBar= document.querySelector('.sidebar')
-const sideBarIcon=document.querySelector('.sidebar-s')
 const navbarLogo= document.querySelector('.navbar-logo')
 const navbarLogoS=document.querySelector('.navbar-logo-s')
-const main =document.querySelector('.main')
 const selectHeader= document.querySelector('.select-header')
 const optionContainer= document.querySelector('.option-container')
 // sidebar
 for(let i =1; i<=2; i++){
     sidebarItem[i].onclick=()=>{
-        sidebarItem[i].classList.toggle('sidebar--active')
+        for(let k=1; k<=2;k++){
+            if(sidebarList[k].classList.contains('showList') && k!==i){
+                sidebarList[k].classList.remove('showList')
+                sidebarItem[k].classList.remove('sidebar--active')
+                sidebarArrow[k-1].classList.remove('sb-icon-arrow--active')
+            }
+        }
         sidebarArrow[i-1].classList.toggle('sb-icon-arrow--active')
+        sidebarItem[i].classList.toggle('sidebar--active')
         sidebarList[i].classList.toggle('showList')
     }
 }
@@ -56,3 +60,4 @@ window.addEventListener('click',(e)=>{
         optionContainer.style.display='none';
     }
 })
+//responsive sidebar

@@ -1,10 +1,4 @@
-/*Computer width*/
-@media (min-width:1024px){
-    .navbar-noti-container:hover .navbar-noti{
-        display: block;
-    }
 
-}
 /*Mobile and tablet*/
 @media (max-width:1023px){
     .hide-on-mobile-tablet{
