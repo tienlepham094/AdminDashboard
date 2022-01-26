@@ -209,16 +209,16 @@
     z-index: 10;
     transition: 0.2s linear;
     top: var(--navbar-height);
+    transition: all 0.3s ease-in;
+}
+.sidebar-container.active{
+    width: var(--sidebar-s-width);
 }
 .sidebar{
-    width: var(--sidebar-width);
     padding: 32px 18px;
 }
-
 .sb-item-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: relative;
 }
 .sb-item{
     border-radius: 8px;
@@ -226,43 +226,46 @@
     color: var(--icon-color);
     padding: 15px;
     margin-bottom: 6px;
+    white-space: nowrap;
 }
 .sb-item:hover{
     background-color: var(--primary-color);
     color: var(--white-color);
     cursor: pointer;
 }
-.sidebar-s-element:hover{
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    cursor: pointer;
-}
+
 .sidebar-title{
     padding-left: 10px;
     width: 100%;
+    transition: all 0.4s ease;
 }
 
 .sb-icon-arrow{
+    /* position: absolute;
+    right: 0; */
     font-size: 1.3rem;
-    left: 2px;
     transition: ease-in 0.2s;
+}
+.sidebar-container.active .sb-icon-arrow{
+    display: none;
 }
 .sb-icon-arrow--active{
     transform: rotate(90deg);
 }
 .sb-list-container{
-    max-height: 0;
-    overflow: hidden;
+    display: none;
+    background-color: var(--primary-color);
+    padding-top: 10px;
+    list-style: none;
     transition: max-height 0.3s ease-out;
 }
-
-.sidebar-lists{
-    padding-top: 10px;
+.showList{
+    display: block;
 }
-
 .sidebar-link{
-    text-decoration: none;
+    position: relative;
     color: var(--white-color);
+    text-decoration: none;
     display: block;
     padding: 10px 0px 10px 45px;
 }
@@ -270,59 +273,78 @@
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-/*sidebar s css*/
-.sidebar-s{
-    padding-top: 26px;
+.sidebar-link::before{
+    content: '';
+    position: absolute;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    padding: 3px;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
-.sidebar-s-element{
-    position: relative;
-    height: 55px;
-    color: var(--icon-color);
+li.sidebar-title .sidebar-link::before{
+    display: none;
 }
-.sidebar-s-element:hover .sidebar-s-list{
+.sidebar-container.active .sidebar{
+    padding: 32px 0 0 0 ;
+}
+.sidebar-container.active .sb-item{
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.sidebar-container.active .sb-icon{
+    font-size: 1.8rem;
+    margin-left: 10px;
+}
+.sidebar-container.active  .sb-item-container{
+    justify-content: center;
+}
+.sidebar-container li.sidebar-title{
+    display: none;
+}
+.sidebar-container.active .sidebar-title{
+    display: none;
+}
+.sidebar-container.active li.sidebar-title{
+    opacity: 1;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-size: 1.6rem;
+    padding-left: 0px;
+    min-height: 50px;
+
+}
+.sidebar-container.active .sb-item:hover .sb-list-container{
     display: block;
 }
-.sidebar-s-list{
-    display: none;
+.sidebar-container.active .sb-item{
+    position: relative;
+}
+.sidebar-container.active .sb-list-container{
+    font-size: 1.4rem;
     position: absolute;
-    left: var(--sidebar-s-width);
     top: 0;
-    min-height: 55px;
     background-color: var(--primary-color);
+    left: var(--sidebar-s-width);
+    color: var(--white-color);
     width: 200px;
-    padding:12px 20px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-}
-.sidebar-s-title{
-    color: var(--white-color);
-    font-size: 1.6rem;
-    position: relative;
-    top: 7px;
-}
-.sb-s-icon{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    font-size: 1.8rem;
-}
-.sidebar-s-lists{
-    padding-top: 20px;
-}
-.sidebar-s-link{
-    text-decoration: none;
-    color: var(--white-color);
-    font-size: 1.5rem;
-    display: block;
-    padding: 8px 20px;
+    padding-top: 0;
+} 
 
+.sidebar-container.active .sidebar-item{
+    padding-left: 20px;
+}
+.sidebar-container.active .sb-list-container.blank{
+    bottom: 0;
 }
 
 .sidebar--active{
     background-color: var(--primary-color);
     color: var(--white-color);
-    display: block;
 }
 /*body content css*/
 .main{
@@ -331,6 +353,10 @@
     left: var(--sidebar-width);
     background-color: #F5F7FF;
     width: calc(100% - var(--sidebar-width));
+}
+.sidebar-container.active ~ .main{
+    left: var(--sidebar-s-width);
+    width: calc(100% - var(--sidebar-s-width));
 }
 .wrapper{
     padding: 35px;

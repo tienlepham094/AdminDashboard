@@ -15,39 +15,26 @@ for(let i =1; i<=2; i++){
     sidebarItem[i].onclick=()=>{
         sidebarItem[i].classList.toggle('sidebar--active')
         sidebarArrow[i-1].classList.toggle('sb-icon-arrow--active')
-        if(sidebarList[i-1].style.maxHeight){
-            sidebarList[i-1].style.maxHeight=null;
-        }else{
-            sidebarList[i-1].style.maxHeight= sidebarList[i-1].scrollHeight + 'px';
-        }
+        sidebarList[i].classList.toggle('showList')
     }
 }
 //navbar
 var isOpen=false;
 navToggleBtn.addEventListener('click', ()=>{
     //sidebar icon only
-
     if(!isOpen){
-        sidebarContainer.style.width='var(--sidebar-s-width)'
         navToggleBtn.classList.remove('toggle-down')
         navToggleBtn.classList.add('toggle-up')
-        sideBar.classList.add('sidebar--hide')
-        sideBarIcon.classList.remove('sidebar--hide')
         navbarLogo.classList.add('sidebar--hide')
         navbarLogoS.classList.remove('sidebar--hide')
-        main.style.left="var(--sidebar-s-width)"
-        main.style.width='calc(100% - var(--sidebar-s-width))'
+        sidebarContainer.classList.add('active')
         isOpen=true;
     }else{
-        sidebarContainer.style.width='var(--sidebar-width)'
         navToggleBtn.classList.remove('toggle-up')
         navToggleBtn.classList.add('toggle-down')
-        sideBar.classList.remove('sidebar--hide')
-        sideBarIcon.classList.add('sidebar--hide')
         navbarLogo.classList.remove('sidebar--hide')
         navbarLogoS.classList.add('sidebar--hide')
-        main.style.left="var(--sidebar-width)"
-        main.style.width="calc(100% - var(--sidebar-width))"
+        sidebarContainer.classList.remove('active')
         isOpen=false;
     }
 })
