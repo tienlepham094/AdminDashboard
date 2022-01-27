@@ -45,6 +45,18 @@
         transform: translateX(0); 
         width: var(--sidebar-width);
     }
+    .report-analysis{
+        margin-bottom: 30px;
+    }
+    .report-analysis__num{
+        padding-top: 10px;
+    }
+    .report-analysis__item{
+        margin-bottom: 20px;
+    }
+    .chart-box{
+        height: 300px;
+    }
 }
 /*Tablet*/
 @media (min-width:740px) and (max-width:1023px){
@@ -63,6 +75,8 @@
     .people-banner-content{
         top: -70px;
     }
+
+   
 }
 /*Mobile*/
 @media (max-width:739px){
@@ -81,6 +95,9 @@
         margin-bottom: 0;
     }
     .col-mg{
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+    }
+    .order-sales-section{
+        margin-top: 0;
     }
 }

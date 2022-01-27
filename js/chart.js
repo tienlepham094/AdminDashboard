@@ -14,6 +14,8 @@ const orderChart= new Chart (ctx,{
             ],
             borderWidth: 2,
             fill: false,
+            tension:0.4,
+            pointRadius:0,
         },
         {
             label: "Downloads",
@@ -23,6 +25,8 @@ const orderChart= new Chart (ctx,{
             ],
             borderWidth: 2,
             fill: false,
+            tension:0.4,
+            pointRadius:0,
         }
         ]
     },
@@ -39,9 +43,9 @@ const orderChart= new Chart (ctx,{
                 ticks:{
                     stepSize: 200,
                 },
-                grid: {
-                    display: true,
-                }
+                grid:{
+                    drawBorder: false,
+                },
             },
             x:{
                 grid: {
@@ -50,10 +54,73 @@ const orderChart= new Chart (ctx,{
             }
         },
         layout:{
-            padding: 10,
+            padding:{
+                left:10
+            },
             fontColor:"#6C7383",
         },
         responsive:true,
-
+        
     }
 })
+//sales chart
+const ctx2= document.getElementById('salesChart')
+const salesChart= new Chart(ctx2,{
+    type: 'bar',
+    data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+        datasets: [{
+            label: 'Offline Sales',
+            data: [480, 230, 470, 210, 330],
+            backgroundColor: '#98BDFF',
+            borderRadius: 5,
+        },
+        {
+            label: 'Online Sales',
+            data: [400, 340, 550, 480, 170],
+            backgroundColor: '#4B49AC',
+            borderRadius: 5,
+        }
+      ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {  
+            legend: {
+                display:false,
+            },
+        },
+        layout: {
+            padding: {
+                left: 0,
+                right: 0,
+                top: 50,
+                bottom: 50
+            }
+        },
+        scales:{
+            y:{
+                max: 560,
+                min: 0,
+                ticks:{
+                    stepSize:100,
+                    callback: function(value){
+                        return "$"+ value ;
+                    }
+                },
+                grid:{
+                    drawBorder: false,
+                },
+            },
+            x:{
+                grid:{
+                    display:false
+                },
+                
+            }
+        },
+        
+    },
+})
+

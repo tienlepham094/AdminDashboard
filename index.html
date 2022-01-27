@@ -245,7 +245,7 @@
                         <!--Order Chart and Sales Chart-->
                         <div class="container-fluid order-sales-section">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-12 col-mg">
                                     <div class="report-container">
                                         <div class="report-content">
                                             <h3 class="report-title">Order Details</h3>
@@ -272,13 +272,21 @@
                                             <canvas id="orderChart"></canvas>
                                         </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-12 col-mg">
                                     <div class="report-container">
                                         <div class="report-content">
-                                            <h3 class="report-title">Sales Report</h3>
+                                            <h3 class="report-title">Sales Report
+                                                <span class="report-view__all">View All</span>
+                                            </h3>
                                             <p class="report-desc">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                                             </div>
-                                            <canvas id="orderChart"></canvas>
+                                            <ul class="chart-legend">
+                                                <li class="chart-legend__item">Offline Sales</li>
+                                                <li class="chart-legend__item">Online Sales</li>
+                                            </ul>
+                                            <div class="chart-box">
+                                                <canvas id="salesChart"></canvas>
+                                            </div>
                                         </div>
                                 </div>
                             </div>
