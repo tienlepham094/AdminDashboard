@@ -38,3 +38,22 @@ html{
 .noti-icon--default{
     color: var(--default-color);
 }
+/*card css*/
+.card-area{
+    margin-bottom: 50px;
+}
+.card-container{
+    min-height: 160px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:#7978E9;
+    color: var(--white-color);
+    font-size: 1.6rem;
+    padding: 30px 22.5px;
+}
+.card-number{
+    font-size: 3rem;
+    margin-top: 27px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}

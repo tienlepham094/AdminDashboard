@@ -476,24 +476,6 @@ li.sidebar-title .sidebar-link::before{
     margin-bottom: 4px;
 }
 /*card css*/
-.card-area{
-    margin-bottom: 50px;
-}
-.card-container{
-    min-height: 160px;
-    width: 100%;
-    border-radius: 15px;
-    background-color:#7978E9;
-    color: var(--white-color);
-    font-size: 1.6rem;
-    padding: 30px 22.5px;
-}
-.card-number{
-    font-size: 3rem;
-    margin-top: 27px;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
 .card-percentage{
     margin-bottom: 9px;
     font-size: 1.4rem;
@@ -506,4 +488,44 @@ li.sidebar-title .sidebar-link::before{
 }
 .card-red{
     background-color: var(--red-color);
+}
+/*Order chart and Sales chart*/
+.order-sales-section{
+    margin-top: 45px;
+}
+.report-container{
+    background-color: var(--white-color);
+    border-radius: 15px;
+    padding: 22.5px;
+}
+.report-content{
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+.report-title{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.report-desc{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.report-analysis{
+    display: flex;
+    list-style: none;
+    margin-bottom: 60px;
+    justify-content: flex-start;
+}
+.report-analysis__item{
+    padding-right: 40px;
+}
+.report-analysis__name{
+    color: #737F8B;
+}
+.report-analysis__num{
+    color: var(--primary-color);
+    font-size: 2.3rem;
+    padding-top: 20px;
+    font-weight:700;
 }
