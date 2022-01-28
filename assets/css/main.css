@@ -479,15 +479,7 @@ li.sidebar-title .sidebar-link::before{
     margin-bottom: 9px;
     font-size: 1.4rem;
 }
-.card-primary{
-    background-color: var(--primary-color);
-}
-.card-blue{
-    background-color: var(--blue-color);
-}
-.card-red{
-    background-color: var(--red-color);
-}
+
 /*Order chart and Sales chart*/
 .order-sales-section{
     margin-top: 45px;
@@ -572,6 +564,7 @@ li.sidebar-title .sidebar-link::before{
     padding: 22.5px;
     background-color: var(--white-color);
     width: 100%;
+
 }
 .detail-content{
     padding-top: 15px;
@@ -651,6 +644,29 @@ li.sidebar-title .sidebar-link::before{
     width:80%;
 }
 .sales-donut-chart{
-    width: 200px;
+    width: 250px;
     margin: 0 auto;
+}
+.sales-donut-legend__container{
+    margin-top: 50px;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+.sales-donut-legend{
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+}
+.sales-donut-num{
+    margin-left: auto;
+}
+.sales-donut-name{
+    padding-left: 20px;
+}
+.sales-donut-color{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
 }

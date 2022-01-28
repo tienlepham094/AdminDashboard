@@ -63,3 +63,18 @@ html{
     margin-bottom: 20px;
     font-weight: bold;
 }
+.primary-bg{
+    background-color: var(--primary-color);
+}
+.warning-bg{
+    background-color: var(--warning-color);
+}
+.default-bg{
+    background-color: var(--default-color);
+}
+.red-bg{
+    background-color: var(--red-color);
+}
+.blue-bg{
+    background-color: var(--blue-color);
+}

@@ -208,14 +208,14 @@
                                 <div class="col-md-6 col-12">
                                     <div class="row card-area">
                                         <div class="col-md-6 col-12 col-mg">
-                                            <div class="card-container card-blue">
+                                            <div class="card-container blue-bg">
                                                 <div class="card-title">Today's Booking</div>
                                                 <div class="card-number">4006</div>
                                                 <span class="card-percentage">10.00% (30days)</span>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12 col-mg">
-                                            <div class="card-container card-primary">
+                                            <div class="card-container primary-bg">
                                                 <div class="card-title">Total Bookings</div>
                                                 <div class="card-number">61344</div>
                                                 <span class="card-percentage">22.00% (30days)</span>
@@ -231,7 +231,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12 col-mg">
-                                            <div class="card-container card-red">
+                                            <div class="card-container red-bg">
                                                 <div class="card-title">Number of Clients</div>
                                                 <div class="card-number">47033</div>
                                                 <span class="card-percentage">0.22% (30days)</span>
@@ -292,67 +292,95 @@
                         </div>
                         <!--Details report-->
                         <div class="container-fluid">
-                            <div class="detail-report-section">
-                                <div class="row ">
-                                        <div class="col-lg-4 col-12">
-                                            <div class="detail-content">
-                                                <h3 class="report-title">Detailed Report</h3>
-                                                <h2 class="detail-money">
-                                                    <i class="fas fa-dollar-sign"></i>
-                                                    34040
-                                                </h2>
-                                                <div class="detail-locate">North America</div>
-                                                <p class="detail-msg">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page 
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-12 detail-range-section">
-                                            <div class="detail-range__container">
-                                                <div class="range-name">Illinois</div>
-                                                <div class="ranger-progress"></div>
-                                                <div class="range-number">713</div>
-                                            </div>
-                                            <div class="detail-range__container">
-                                                <div class="range-name">Washington</div>
-                                                <div class="ranger-progress washington"></div>
-                                                <div class="range-number">583</div>
-                                            </div>
-                                            <div class="detail-range__container">
-                                                <div class="range-name">Mississippi</div>
-                                                <div class="ranger-progress mississippi"></div>
-                                                <div class="range-number">924</div>
-                                            </div>
-                                            <div class="detail-range__container">
-                                                <div class="range-name">California</div>
-                                                <div class="ranger-progress cali"></div>
-                                                <div class="range-number">664</div>
-                                            </div>
-                                            <div class="detail-range__container">
-                                                <div class="range-name">Maryland</div>
-                                                <div class="ranger-progress maryland"></div>
-                                                <div class="range-number">560</div>
-                                            </div>
-                                            <div class="detail-range__container">
-                                                <div class="range-name">Alaska</div>
-                                                <div class="ranger-progress"></div>
-                                                <div class="range-number">793</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-12">
-                                            <div class="sales-donut-chart">
-                                                <canvas id="salesDonutChart"></canvas>
-                                            </div>
-                                        </div>
+
+                                <div class="detail-report-section">
+                                    <div class="row">
+                                       
+                                                <div class="col-lg-4 col-12">
+                                                    <div class="detail-content">
+                                                        <h3 class="report-title">Detailed Report</h3>
+                                                        <h2 class="detail-money">
+                                                            <i class="fas fa-dollar-sign"></i>
+                                                            34040
+                                                        </h2>
+                                                        <div class="detail-locate">North America</div>
+                                                        <p class="detail-msg">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page 
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-6 col-12 col-mt detail-range-section">
+                                                    <div class="detail-range__container">
+                                                        <div class="range-name">Illinois</div>
+                                                        <div class="ranger-progress"></div>
+                                                        <div class="range-number">713</div>
+                                                    </div>
+                                                    <div class="detail-range__container">
+                                                        <div class="range-name">Washington</div>
+                                                        <div class="ranger-progress washington"></div>
+                                                        <div class="range-number">583</div>
+                                                    </div>
+                                                    <div class="detail-range__container">
+                                                        <div class="range-name">Mississippi</div>
+                                                        <div class="ranger-progress mississippi"></div>
+                                                        <div class="range-number">924</div>
+                                                    </div>
+                                                    <div class="detail-range__container">
+                                                        <div class="range-name">California</div>
+                                                        <div class="ranger-progress cali"></div>
+                                                        <div class="range-number">664</div>
+                                                    </div>
+                                                    <div class="detail-range__container">
+                                                        <div class="range-name">Maryland</div>
+                                                        <div class="ranger-progress maryland"></div>
+                                                        <div class="range-number">560</div>
+                                                    </div>
+                                                    <div class="detail-range__container">
+                                                        <div class="range-name">Alaska</div>
+                                                        <div class="ranger-progress"></div>
+                                                        <div class="range-number">793</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-6 col-12 col-mt">
+                                                    <div class="sales-donut-chart">
+                                                        <canvas id="salesDonutChart"></canvas>
+                                                    </div>
+                                                    <div class="sales-donut-legend__container">
+                                                        <div class="sales-donut-legend">
+                                                            <div class="sales-donut-color primary-bg"></div>
+                                                            <div class="sales-donut-name">Offline sales</div>
+                                                            <span class="sales-donut-num">88333</span>
+                                                        </div>
+                                                        <div class="sales-donut-legend">
+                                                            <div class="sales-donut-color warning-bg"></div>
+                                                            <div class="sales-donut-name ">Online sales</div>
+                                                            <span class="sales-donut-num">88333</span>
+                                                        </div>
+                                                        <div class="sales-donut-legend">
+                                                            <div class="sales-donut-color default-bg"></div>
+                                                            <div class="sales-donut-name">Returns</div>
+                                                            <span class="sales-donut-num">88333</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+ 
+
+
+
                                     </div>
-                            </div>
+                                </div>
+
                         </div>
                     </div>
                 </div>
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js" integrity="sha512-oM0dc37yV3+DHLyISesrGcv1tbKcQ5PaBo3PH59wedInPsSVJ0oTW53GISbMBD+3UO/WWrXnQ5DCM7hsRNolJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/responsive.js"></script>
     <script src="js/chart.js"></script>
+    <script src="js/slider.js"></script>
 </body>
 </html>
