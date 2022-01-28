@@ -63,6 +63,9 @@
     .detail-range__container:first-child {
         padding-top: 0;
     }
+    .sales-slider{
+        margin-left: auto;
+    }
 }
 /*Tablet*/
 @media (min-width:740px) and (max-width:1023px){

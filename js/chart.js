@@ -166,3 +166,45 @@ const donutChart= new Chart(ctx3,{
     plugins: [counter],
 
 });
+const ctx4= document.getElementById('salesDonutChart2')
+const counter2={
+    id:'counter2',
+    beforeDraw(chart, args,options){
+        const {ctx, chartArea:{top, right, bottom, left,width,height}}=chart;
+        ctx.save();
+        ctx.fillStyle='#1f1f1f';
+        ctx.font='50px sans-serif'
+        ctx.textAlign='center'
+        ctx.fillText('90', width / 2, top + (height / 2) + 20)
+    }
+}
+const donutChart2= new Chart(ctx4,{
+    type:'doughnut',
+    data:{
+        labels: ["Jan", "Feb", "Mar"],
+        datasets: [{
+            data: [60, 70, 70],
+            backgroundColor: [
+                "#4B49AC","#FFC100", "#248AFD",
+            ],
+            borderColor: "rgba(0,0,0,0)",
+            cutout:'80%'
+        }
+        ]
+
+    },
+    options:{
+        maintainAspectRatio: false,
+        responsive:true,
+        legend:{
+                display:false,
+        },
+        plugins:{
+            legend:{
+                display:false
+            },
+        }
+    },
+    plugins: [counter2],
+
+});

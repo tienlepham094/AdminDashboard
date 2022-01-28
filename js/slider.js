@@ -4,7 +4,9 @@ $(document).ready(function(){
         slidesToShow:1,
         infinite:true,
         autoplay:true,
-        autoplaySpeed:2000,
+        autoplaySpeed:3000,
         draggable:true,
+        prevArrow:$('.sales-slider__arrow-left'),
+        nextArrow:$('.sales-slider__arrow-right')
     });
   });
