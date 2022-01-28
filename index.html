@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="assets/grid/bootstrap-grid.css">
     <link rel="stylesheet" href="assets/grid/bootstrap-grid.min.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -291,10 +290,67 @@
                                 </div>
                             </div>
                         </div>
+                        <!--Details report-->
+                        <div class="container-fluid">
+                            <div class="detail-report-section">
+                                <div class="row ">
+                                        <div class="col-lg-4 col-12">
+                                            <div class="detail-content">
+                                                <h3 class="report-title">Detailed Report</h3>
+                                                <h2 class="detail-money">
+                                                    <i class="fas fa-dollar-sign"></i>
+                                                    34040
+                                                </h2>
+                                                <div class="detail-locate">North America</div>
+                                                <p class="detail-msg">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page 
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-12 detail-range-section">
+                                            <div class="detail-range__container">
+                                                <div class="range-name">Illinois</div>
+                                                <div class="ranger-progress"></div>
+                                                <div class="range-number">713</div>
+                                            </div>
+                                            <div class="detail-range__container">
+                                                <div class="range-name">Washington</div>
+                                                <div class="ranger-progress washington"></div>
+                                                <div class="range-number">583</div>
+                                            </div>
+                                            <div class="detail-range__container">
+                                                <div class="range-name">Mississippi</div>
+                                                <div class="ranger-progress mississippi"></div>
+                                                <div class="range-number">924</div>
+                                            </div>
+                                            <div class="detail-range__container">
+                                                <div class="range-name">California</div>
+                                                <div class="ranger-progress cali"></div>
+                                                <div class="range-number">664</div>
+                                            </div>
+                                            <div class="detail-range__container">
+                                                <div class="range-name">Maryland</div>
+                                                <div class="ranger-progress maryland"></div>
+                                                <div class="range-number">560</div>
+                                            </div>
+                                            <div class="detail-range__container">
+                                                <div class="range-name">Alaska</div>
+                                                <div class="ranger-progress"></div>
+                                                <div class="range-number">793</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-12">
+                                            <div class="sales-donut-chart">
+                                                <canvas id="salesDonutChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js" integrity="sha512-oM0dc37yV3+DHLyISesrGcv1tbKcQ5PaBo3PH59wedInPsSVJ0oTW53GISbMBD+3UO/WWrXnQ5DCM7hsRNolJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="js/app.js"></script>
     <script src="js/responsive.js"></script>
     <script src="js/chart.js"></script>

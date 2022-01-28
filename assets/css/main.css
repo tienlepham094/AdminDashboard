@@ -502,13 +502,9 @@ li.sidebar-title .sidebar-link::before{
     font-size: 1.5rem;
     color: var(--text-color);
 }
-.report-title{
-    display: flex;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
+
 .report-desc{
+    line-height: 2rem;
     font-weight: 600;
     margin-bottom: 30px;
 }
@@ -568,4 +564,93 @@ li.sidebar-title .sidebar-link::before{
 .chart-box{
     width: 100%;
     height: 400px;
+}
+/*detailed report css*/
+.detail-report-section{
+    margin-top: 45px;
+    border-radius: 15px;
+    padding: 22.5px;
+    background-color: var(--white-color);
+    width: 100%;
+}
+.detail-content{
+    padding-top: 15px;
+}
+.detail-money{
+    color: var(--primary-color);
+    font-size: 5rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.detail-locate{
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2.9rem;
+    font-weight: 500;
+}
+.detail-msg{
+    color: var(--text-color);
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.detail-range-section{
+    border-right: 1px solid #CED4DA;
+}
+.detail-range__container{
+    display: flex;
+    align-items: center;
+}
+.detail-range__container:first-child{
+    padding-top: 30px;
+}
+.range-name{
+    padding: 20px 0;
+    min-width: 120px;
+    font-size: 1.5rem;
+    color: var(--icon-color);
+}
+.ranger-progress{
+    margin-left: 20px;
+    margin-right: 40px;
+    width: 50%;
+    height: 10px;
+    background-color: #e8eff4;
+    border-radius: 15px;
+    position: relative;
+}
+.range-number{
+    font-size: 1.6rem;
+    color: var(--black-color);
+    font-weight: 700;
+    
+}
+.ranger-progress::before{
+    position: absolute;
+    content: "";
+    background-color: var(--primary-color);
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 75%;
+    border-radius: 15px;
+}
+.ranger-progress.washington::before{
+    background-color: var(--warning-color);
+    width:30%;
+}
+.ranger-progress.mississippi::before{
+    background-color: var(--danger-color);
+    width:90%;
+}
+.ranger-progress.cali::before{
+    background-color: var(--default-color);
+    width:60%;
+}
+.ranger-progress.maryland::before{
+    background-color: var(--danger-color);
+    width:80%;
+}
+.sales-donut-chart{
+    width: 200px;
+    margin: 0 auto;
 }

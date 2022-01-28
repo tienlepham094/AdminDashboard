@@ -31,27 +31,42 @@ const orderChart= new Chart (ctx,{
         ]
     },
     options:{
-        plugins:{
-            legend:{
-                display:false,
-            },
+        legend:{
+            display:false,
         },
         scales:{
-            y: {
-                max: 1200,
-                min: 200,
-                ticks:{
+            yAxes: [{
+                display: true,
+                ticks: {
+                    display: true,
+                    autoSkip: false,
+                    maxRotation: 0,
                     stepSize: 200,
+                    min: 200,
+                    max: 1200,
+                    padding: 18,
+                    fontColor:"#6C7383"
                 },
-                grid:{
-                    drawBorder: false,
-                },
-            },
-            x:{
-                grid: {
-                    display: false,
+                gridLines: {
+                    display: true,
+                    color:"#f2f2f2",
+                    drawBorder: false
                 }
-            }
+            }],
+            xAxes: [{
+                display: true,
+                ticks: {
+                    display: true,
+                    padding: 10,
+                    fontColor:"#6C7383"
+                },
+                gridLines: {
+                    display: false,
+                    drawBorder: false,
+                    color: 'transparent',
+                    zeroLineColor: '#eeeeee'
+                }
+            }],
         },
         layout:{
             padding:{
@@ -59,9 +74,9 @@ const orderChart= new Chart (ctx,{
             },
             fontColor:"#6C7383",
         },
-        responsive:true,
         
-    }
+    },
+    responsive:true,
 })
 //sales chart
 const ctx2= document.getElementById('salesChart')
@@ -73,23 +88,20 @@ const salesChart= new Chart(ctx2,{
             label: 'Offline Sales',
             data: [480, 230, 470, 210, 330],
             backgroundColor: '#98BDFF',
-            borderRadius: 5,
         },
         {
             label: 'Online Sales',
             data: [400, 340, 550, 480, 170],
             backgroundColor: '#4B49AC',
-            borderRadius: 5,
         }
-      ]
+    ]
     },
+    responsive: true,
     options: {
-        responsive: true,
+        cornerRadius: 5,
         maintainAspectRatio: false,
-        plugins: {  
-            legend: {
-                display:false,
-            },
+        legend: {
+            display:false,
         },
         layout: {
             padding: {
@@ -100,27 +112,156 @@ const salesChart= new Chart(ctx2,{
             }
         },
         scales:{
-            y:{
-                max: 560,
-                min: 0,
-                ticks:{
-                    stepSize:100,
-                    callback: function(value){
-                        return "$"+ value ;
-                    }
-                },
-                grid:{
+            yAxes: [{
+                display: true,
+                gridLines: {
+                    display: true,
                     drawBorder: false,
+                    color: "#F2F2F2"
                 },
-            },
-            x:{
-                grid:{
-                    display:false
+                ticks: {
+                    display: true,
+                    min: 0,
+                    max: 560,
+                    callback: function(value, index, values) {
+                        return  value + '$' ;
+                    },
+                    fontColor:"#6C7383"
+                }
+            }],
+            xAxes: [{
+                stacked: false,
+                ticks: {
+                    beginAtZero: true,
+                    fontColor: "#6C7383"
                 },
-                
-            }
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                    display: false
+                },
+            }]
         },
         
     },
 })
+//donut sales chart
+const ctx3= document.getElementById('salesDonutChart')
+const donutChart= new Chart(ctx3,{
+    type:'doughnut',
+    data:{
+        labels: ["Jan", "Feb", "Mar"],
+        datasets: [{
+            data: [60, 70, 70],
+            backgroundColor: [
+                "#4B49AC","#FFC100", "#248AFD",
+            ],
+            borderColor: "rgba(0,0,0,0)"
+        }
+        ]
 
+    },
+    options:{
+        maintainAspectRatio: false,
+        responsive:true,
+        legend:{
+                display:false,
+        },
+
+        elements: {
+            center: {
+                text: '78',
+              color: '#1f1f1f', // Default is #000000
+              fontStyle: 'sans-serif', // Default is Arial
+              sidePadding: 20, // Default is 20 (as a percentage)
+              minFontSize: 20, // Default is 20 (in px), set to false and text will not wrap.
+              lineHeight: 25 // Default is 25 (in px), used for when text wraps
+            }
+          }
+    },
+
+
+});
+//counter plugin block
+Chart.pluginService.register({
+    beforeDraw: function(chart) {
+      if (chart.config.options.elements.center) {
+        // Get ctx from string
+        var ctx = chart.chart.ctx;
+  
+        // Get options from the center object in options
+        var centerConfig = chart.config.options.elements.center;
+        var fontStyle = centerConfig.fontStyle || 'sans-serif';
+        var txt = centerConfig.text;
+        var color = centerConfig.color || '#000';
+        var maxFontSize = centerConfig.maxFontSize || 50;
+        var sidePadding = centerConfig.sidePadding || 20;
+        var sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2)
+        // Start with a base font of 30px
+        ctx.font = "20px " + fontStyle;
+  
+        // Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+        var stringWidth = ctx.measureText(txt).width;
+        var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
+  
+        // Find out how much the font can grow in width.
+        var widthRatio = elementWidth / stringWidth;
+        var newFontSize = Math.floor(30 * widthRatio);
+        var elementHeight = (chart.innerRadius * 2);
+  
+        // Pick a new font size so it will not be larger than the height of label.
+        var fontSizeToUse = Math.min(newFontSize, elementHeight, maxFontSize);
+        var minFontSize = centerConfig.minFontSize;
+        var lineHeight = centerConfig.lineHeight || 25;
+        var wrapText = false;
+  
+        if (minFontSize === undefined) {
+          minFontSize = 20;
+        }
+  
+        if (minFontSize && fontSizeToUse < minFontSize) {
+          fontSizeToUse = minFontSize;
+          wrapText = true;
+        }
+  
+        // Set font settings to draw it correctly.
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+        var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+        ctx.font = fontSizeToUse + "px " + fontStyle;
+        ctx.fillStyle = color;
+  
+        if (!wrapText) {
+          ctx.fillText(txt, centerX, centerY);
+          return;
+        }
+  
+        var words = txt.split(' ');
+        var line = '';
+        var lines = [];
+  
+        // Break words up into multiple lines if necessary
+        for (var n = 0; n < words.length; n++) {
+          var testLine = line + words[n] + ' ';
+          var metrics = ctx.measureText(testLine);
+          var testWidth = metrics.width;
+          if (testWidth > elementWidth && n > 0) {
+            lines.push(line);
+            line = words[n] + ' ';
+          } else {
+            line = testLine;
+          }
+        }
+  
+        // Move the center up depending on line height and number of lines
+        centerY -= (lines.length / 2) * lineHeight;
+  
+        for (var n = 0; n < lines.length; n++) {
+          ctx.fillText(lines[n], centerX, centerY);
+          centerY += lineHeight;
+        }
+        //Draw text in center
+        ctx.fillText(line, centerX, centerY);
+      }
+    }
+  });
