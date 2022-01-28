@@ -687,3 +687,6 @@ li.sidebar-title .sidebar-link::before{
     font-size: 1.2rem;
     color: var(--icon-color);
 }
+.report-title > .sales-slider{
+    display: none;
+}

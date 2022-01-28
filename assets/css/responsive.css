@@ -7,6 +7,9 @@
     .show-on-mobile-tablet{
         display: block;
     }
+    .show-on-mobile-tablet__flex{
+        display: flex !important;
+    }
     .col-mt{
         margin-top: 30px;
     }
