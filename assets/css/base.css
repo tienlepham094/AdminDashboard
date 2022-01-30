@@ -79,3 +79,6 @@ html{
 .blue-bg{
     background-color: var(--blue-color);
 }
+.success-bg{
+    background-color: var(--success-color);
+}
