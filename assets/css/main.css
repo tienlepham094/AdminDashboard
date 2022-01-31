@@ -485,9 +485,6 @@ li.sidebar-title .sidebar-link::before{
     margin-top: 45px;
 }
 .report-container{
-    background-color: var(--white-color);
-    border-radius: 15px;
-    padding: 22.5px;
     height: 100%;
 }
 .report-content{
@@ -560,9 +557,6 @@ li.sidebar-title .sidebar-link::before{
 /*detailed report css*/
 .detail-report-section{
     margin-top: 45px;
-    border-radius: 15px;
-    padding: 22.5px;
-    background-color: var(--white-color);
     margin-bottom: 45px;
 }
 .detail-content{
@@ -694,11 +688,6 @@ li.sidebar-title .sidebar-link::before{
 .product-todo-section{
     margin-bottom: 45px;
 }
-.top-product-container{
-    background-color: var(--white-color);
-    border-radius: 15px;
-    padding: 22.5px;
-}
 .product-table{
     width: 100%;
     font-size: 1.5rem;
@@ -735,10 +724,7 @@ li.sidebar-title .sidebar-link::before{
 }
 /*todo*/
 .todo-section{
-    background-color: var(--white-color);
-    padding: 22.5px;
     height: 100%;
-    border-radius: 15px;
 }
 .todo-container{
     overflow-y:scroll;
@@ -818,7 +804,7 @@ li.sidebar-title .sidebar-link::before{
 }
 .todo-add-container{
     display: flex;
-    /* margin-top: 30px; */
+    margin-top: 30px;
     align-items: center;
 }
 .todo-add-field{
@@ -834,4 +820,89 @@ li.sidebar-title .sidebar-link::before{
     font-size: 2.2rem;
     color: var(--primary-color);
     cursor: pointer;
+}
+/*project and noti css*/
+.project-noti-section{
+    margin-bottom: 45px;
+}
+.project-section{
+    height: 100%;
+}
+.project-table{
+    font-size: 1.5rem;
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: auto;
+    color: #212529;
+    white-space: nowrap;
+}
+.project-table th{
+    text-align: left;
+    font-weight: bold;
+    padding: 10px 20px 10px 0;
+
+}
+.project-table tr:first-child{
+    border-bottom: 2px solid #ddd;
+}
+.project-table td{
+    padding: 20px 20px 20px 0;
+}
+.table-number{
+    font-weight: bold;
+}
+.table-user{
+    opacity: 0.7;
+}
+/*chart data css*/
+
+.chart-data-section {
+    margin-bottom: 20px;
+}
+.chart-data-item{
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+.chart-data-progress{
+    display: flex;
+    align-items: center;
+}
+.chart-data-range{
+    width: 90%;
+    border-radius: 15px;
+    height: 11px;
+    position: relative;
+    overflow: hidden;
+}
+.chart-data-title{
+    margin-bottom: 5px;
+}
+.chart-data-range::before{
+    position: absolute;
+    content: "";
+    background-color: var(--default-color);
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 70%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius:15px ;
+}
+.chart-data-range-40::before{
+    width: 40%;
+}
+.chart-data-range-20::before{
+    width: 20%;
+}
+.chart-data-range-90::before{
+    width: 90%;
+}
+.chart-data-number{
+    margin-left: auto;
+}
+/*card css*/
+.card-img{
+    position: absolute;
+    right: 15px;
 }

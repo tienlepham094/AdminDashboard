@@ -110,12 +110,22 @@
         margin-bottom: 0;
     }
     .col-mg{
-        margin-bottom: 25px;
+        margin-bottom: 30px;
     }
     .order-sales-section{
         margin-top: 0;
     }
+    .product-todo-section{
+        margin-bottom: 0;
+    }
+    .detail-report-section {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
     .detail-range-section{
         border: 0;
+    }
+    .chart-data-section{
+        margin-bottom: 0;
     }
 }

@@ -82,3 +82,8 @@ html{
 .success-bg{
     background-color: var(--success-color);
 }
+.area-section {
+    background-color: var(--white-color);
+    border-radius: 15px;
+    padding: 25px;
+}
