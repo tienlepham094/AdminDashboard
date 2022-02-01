@@ -91,7 +91,12 @@
         width: 180px;
         height: 200px;
     }
-
+    .chart-data-section{
+        height: 100%;
+    }
+    .card-img{
+        top: 12px;
+    }
 }
 /*Mobile*/
 @media (max-width:739px){

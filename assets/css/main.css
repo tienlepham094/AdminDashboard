@@ -854,10 +854,17 @@ li.sidebar-title .sidebar-link::before{
 .table-user{
     opacity: 0.7;
 }
+@media (max-width: 1540px) and (min-width:1024px) {
+    .project-table-responsive{
+        display: block;
+    }
+}
 /*chart data css*/
-
-.chart-data-section {
-    margin-bottom: 20px;
+.chart-meeting-section{
+    height: 100%;
+}
+.chart-data-section{
+    height: 100%;
 }
 .chart-data-item{
     padding-bottom: 20px;
@@ -905,4 +912,36 @@ li.sidebar-title .sidebar-link::before{
 .card-img{
     position: absolute;
     right: 15px;
+}
+.card-meeting{
+    margin-top: auto;
+}
+/*notifications user css*/
+.notifications-user{
+    padding-top: 10px;
+}
+.user-container{
+    display: flex;
+    margin-bottom: 20px;
+}
+.user-img{
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+}
+.user-content{
+    margin-left: 15px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+.user-name{
+    color: var(--default-color);
+    margin-bottom: 8px;
+}
+.user-description{
+    font-size: 1.4rem;
+}
+.user-time{
+    font-size: 1.2rem;
+    margin-top: 8px;
 }
