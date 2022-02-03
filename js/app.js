@@ -60,4 +60,21 @@ window.addEventListener('click',(e)=>{
         optionContainer.style.display='none';
     }
 })
-//responsive sidebar
+//advanced table
+tableControlBtn= document.querySelectorAll('.table-control-icon')
+tableCollapse = document.querySelectorAll('.table-collapse')
+tableRow = document.querySelectorAll('.table-view')
+tableCheckbox= document.querySelectorAll('.table-checkbox')
+//table collapse
+tableControlBtn.forEach((btn, index) => {
+    btn.addEventListener('click',() => {
+        btn.classList.toggle('table-control-icon--active')
+        tableCollapse[index].classList.toggle('table-collapse--active')
+    })
+})
+//table check
+tableCheckbox.forEach((btn, index) => {
+    btn.addEventListener('change', () => {
+        tableRow[index].classList.toggle('table-view--checked')
+    })
+})

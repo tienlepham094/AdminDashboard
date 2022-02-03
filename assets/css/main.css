@@ -946,17 +946,23 @@ li.sidebar-title .sidebar-link::before{
     margin-top: 8px;
 }
 /*advanced table*/
+.advanced-table-responsive{
+    overflow-x: auto;
+}
+.advanced-table-section{
+    margin-bottom: 70px;
+}
 .advanced-table{
     border-collapse: collapse;
     font-size: 1.4rem;
     color: var(--text-color);
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
+    overflow: hidden;
+    width: 100%; 
 }
+
 .advanced-table__head{
     background-color: var(--primary-color);
-    border-radius: 15px;
+    border:none;
 }
 .advanced-table__head th{
     text-align: left;
@@ -979,6 +985,7 @@ li.sidebar-title .sidebar-link::before{
     justify-content: space-between;
 }
 .advanced-table-btn i{
+    margin-left: 8px;
     display: block;
     font-size: 1.1rem;
     color: var(--icon-color);
@@ -990,6 +997,7 @@ li.sidebar-title .sidebar-link::before{
 .table-view td{
     padding: 12px;
 }
+
 /*custom checkbox*/
 .table-selected-label{
     cursor: pointer;
@@ -1006,7 +1014,7 @@ li.sidebar-title .sidebar-link::before{
     left: 0;
     height: 15px;
     width: 15px;
-    border: 1px solid var(--icon-color);
+    border: 2px solid rgb(226, 220, 220);
     border-radius: 5px;
     background-color: var(--white-color);
 }
@@ -1030,7 +1038,16 @@ li.sidebar-title .sidebar-link::before{
 .table-check-name{
     margin-left: 25px;
 }
+.table-view--checked{
+    background-color: #acbad4;
+}
 /*collapse table css*/
+.table-collapse{
+    display: none;
+}
+.table-collapse--active{
+    display: table-row;
+}
 .collapse-container{
     margin: 10px 0;
     padding: 10px 25px;
@@ -1038,6 +1055,7 @@ li.sidebar-title .sidebar-link::before{
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
+    max-width: 100%;
 }
 .table-card{
     background-color: var(--primary-color);
@@ -1050,6 +1068,7 @@ li.sidebar-title .sidebar-link::before{
 .table-card-container {
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
 }
 .table-card-title{
     color: var(--white-color);
@@ -1061,12 +1080,12 @@ li.sidebar-title .sidebar-link::before{
     margin-bottom: 20px;
 }
 .table-card-money{
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     color: #52C4FF;
     margin-bottom: 10px;
 }
 .table-item{
-    padding: 10px;
+    padding: 10px 20px;
 }
 .table-detail{
     padding: 10px;
@@ -1091,4 +1110,14 @@ li.sidebar-title .sidebar-link::before{
     background-color: #FE5C83;
     color: var(--white-color);
     padding-top: 12px;
+    flex-shrink: 0;
+}
+.table-control-icon{
+    color: var(--icon-color);
+    cursor: pointer;
+    margin-right: 10px;
+}
+.table-control-icon--active{
+    transform: rotate(-180deg);
+    transition: 0.2s ease-in;
 }
