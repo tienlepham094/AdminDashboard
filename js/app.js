@@ -78,3 +78,16 @@ tableCheckbox.forEach((btn, index) => {
         tableRow[index].classList.toggle('table-view--checked')
     })
 })
+//slider
+$(document).ready(function(){
+    $('.slider-container').slick({
+        arrows:true,
+        slidesToShow:1,
+        infinite:true,
+        autoplay:true,
+        autoplaySpeed:3000,
+        draggable:true,
+        prevArrow:$('.sales-slider__arrow-left'),
+        nextArrow:$('.sales-slider__arrow-right')
+    });
+  });

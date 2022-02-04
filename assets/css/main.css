@@ -788,6 +788,12 @@ li.sidebar-title .sidebar-link::before{
 .todo-checkbox:checked ~.check-mark::after{
     display: block;
 }
+.todo-checkbox:checked ~.todo-content{
+    text-decoration: line-through var(--primary-color);
+}
+.todo-delete--check{
+    color: var(--primary-color);
+}
 .check-mark::after{
     content: "";
     position: absolute;
@@ -821,6 +827,7 @@ li.sidebar-title .sidebar-link::before{
     color: var(--primary-color);
     cursor: pointer;
 }
+
 /*project and noti css*/
 .project-noti-section{
     margin-bottom: 45px;
