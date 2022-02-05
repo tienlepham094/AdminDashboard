@@ -1,58 +1,77 @@
 const addBtn = document.querySelector('.todo-add-btn');
 const todoInput = document.querySelector('.todo-add-field');
 const todoContainer = document.querySelector('.todo-container')
-
+const STORAGE_KEY = 'todoLists';
 
 const app ={
-    todoLists : [],
+    todoLists : JSON.parse(localStorage.getItem(STORAGE_KEY)) || [],
+    setConfig(value) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(value))
+    },
     render() {
         let todos ='';
         todos = this.todoLists.map((item, index) => {
-            return `
-                    <li class="todo-item">
-                        <label class="todo-check-label">
-                            <input type="checkbox" class="todo-checkbox" data-index =${index}>
-                                <span class="check-mark"></span>
-                                <span class="todo-content">${item.name}</span>
-                        </label>
-                        <div class="todo-delete ${item.isCompleted ? 'todo-delete--check':''}" data-index=${index}>
-                            <i class="fas fa-times"></i>
-                        </div>
-                    </li>`
+            if(item.isCompleted){
+                return `
+                        <li class="todo-item">
+                            <label class="todo-check-label">
+                                <input type="checkbox" class="todo-checkbox" data-index =${index} checked>
+                                    <span class="check-mark"></span>
+                                    <span class="todo-content">${item.name}</span>
+                            </label>
+                            <div class="todo-delete todo-delete--check" data-index=${index}>
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </li>`
+            }else{
+                return `
+                        <li class="todo-item">
+                            <label class="todo-check-label">
+                                <input type="checkbox" class="todo-checkbox" data-index =${index}>
+                                    <span class="check-mark"></span>
+                                    <span class="todo-content">${item.name}</span>
+                            </label>
+                            <div class="todo-delete" data-index=${index}>
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </li>`
+            }
         })
         todoContainer.innerHTML=todos.join('')
 
     },
     addTodo(item) {
         this.todoLists.push({name: item, isCompleted: false});
+        this.setConfig(this.todoLists);
         this.render();
-        console.log(this.todoLists);
         todoInput.value= '';
         todoInput.focus();
     },
-    deleteTodo(e){
+    handleTodo(e){
             const deleteBtn = e.target.closest('.todo-delete');
             if(deleteBtn){
-                const index = deleteBtn.dataset.index;
                 console.log(this);
+                const index = deleteBtn.dataset.index;
                 this.todoLists.splice(index, 1);
+                this.setConfig(this.todoLists);
                 this.render();
             }
-    },
-    handleCheck(e) {
-        const checkBtn =e.target.closest('.todo-checkbox');
-        if(checkBtn){
-            if(checkBtn.checked){
-                const index = checkBtn.dataset.index;
-                this.todoLists[index].isCompleted=true;
-                this.render();
-            }else{
-                const index = checkBtn.dataset.index;
-                this.todoLists[index].isCompleted=false;
-                this.render();
+            const checkBtn =e.target.closest('.todo-checkbox');
+            if(checkBtn){
+                if(checkBtn.checked){
+                    const index = checkBtn.dataset.index;
+                    this.todoLists[index].isCompleted=true;
+                    this.setConfig(this.todoLists);
+                    this.render();
+                }else{
+                    const index = checkBtn.dataset.index;
+                    this.todoLists[index].isCompleted=false;
+                    this.setConfig(this.todoLists);
+                    this.render();
+                }
             }
-        }
     },
+
     handleEvents() {
         // add event
         addBtn.addEventListener('click', () => {
@@ -62,9 +81,9 @@ const app ={
             }
         });
         //delete
-        todoContainer.onclick= this.deleteTodo.bind(this)
+        todoContainer.onclick= this.handleTodo.bind(this)
         //check
-        todoContainer.onclick = this.handleCheck.bind(this)
+
     },
     start() {
         this.render();
