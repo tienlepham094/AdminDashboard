@@ -29,6 +29,12 @@ html{
     font-family: 'Nunito', sans-serif;
     box-sizing: border-box;
 }
+body{
+    height: 100%;
+}
+.text-color{
+    color: var(--primary-color);
+}
 .noti-icon--success{
     color: var(--success-color);
 }

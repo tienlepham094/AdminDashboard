@@ -68,6 +68,10 @@
     .sales-slider{
         margin-left: auto;
     }
+    .footer-container{
+        padding: 20px 15px;
+    }
+    
 }
 /*Tablet*/
 @media (min-width:740px) and (max-width:1023px){
@@ -95,6 +99,9 @@
     }
     .card-img{
         top: 12px;
+    }
+    .footer-content{
+        width: 50%;
     }
 }
 /*Mobile*/
@@ -131,5 +138,15 @@
     }
     .chart-data-section{
         margin-bottom: 0;
+    }
+    .footer-container{
+        text-align: center;
+    }
+    .footer-title-container{
+        display: block;
+    }
+    .footer-content,
+    .footer-title-item{
+        padding-bottom: 10px;
     }
 }
