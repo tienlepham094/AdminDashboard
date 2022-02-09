@@ -8,9 +8,9 @@ const navbarLogoS=document.querySelector('.navbar-logo-s')
 const selectHeader= document.querySelector('.select-header')
 const optionContainer= document.querySelector('.option-container')
 // sidebar
-for(let i =1; i<=2; i++){
+for(let i =1; i<=7; i++){
     sidebarItem[i].onclick=()=>{
-        for(let k=1; k<=2;k++){
+        for(let k=1; k<=7;k++){
             if(sidebarList[k].classList.contains('showList') && k!==i){
                 sidebarList[k].classList.remove('showList')
                 sidebarItem[k].classList.remove('sidebar--active')
@@ -78,6 +78,31 @@ tableCheckbox.forEach((btn, index) => {
         tableRow[index].classList.toggle('table-view--checked')
     })
 })
+//right side bar tab
+const sidebarTitle = document.querySelectorAll('.right-sb-title');
+const sidebarTab = document.querySelectorAll('.sb-tab-content');
+sidebarTitle.forEach((title, index) => {
+    const tab = sidebarTab[index];
+    title.onclick = function() {
+        document.querySelector('.right-sb-title.active').classList.remove('active')
+        document.querySelector('.sb-tab-content.active').classList.remove('active');
+        this.classList.add('active');
+        tab.classList.add('active');
+    }
+})
+/**right sidebar click  */
+const sbToggleBtn = document.querySelector('.navbar-toggle-dots');
+const rightSideBar = document.querySelector('.right-sb-container')
+const sidebarCloseBtn = document.querySelector('.right-sb-close');
+
+sbToggleBtn.addEventListener('click', () => {
+    rightSideBar.classList.toggle('active')
+})
+sidebarCloseBtn.onclick = () => {
+    rightSideBar.classList.remove('active');
+}
+
+
 //slider
 $(document).ready(function(){
     $('.slider-container').slick({
@@ -91,3 +116,17 @@ $(document).ready(function(){
         nextArrow:$('.sales-slider__arrow-right')
     });
   });
+//navbar noti
+const navbarNoti= document.querySelector('.navbar-noti')
+const notiBtn= document.querySelector('.navbar-noti-btn')
+const toggleBtn=document.querySelector('.navbar-toggle-mobile')
+const sideBarContainer=document.querySelector('.sidebar-container')
+
+  //navbar noti
+notiBtn.onclick= ()=>{
+    navbarNoti.classList.toggle('active')
+}
+  //sidebar responsive
+toggleBtn.onclick= ()=>{
+    sideBarContainer.classList.toggle('sidebar-container--active')
+}

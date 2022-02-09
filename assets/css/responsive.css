@@ -30,6 +30,8 @@
         top: var(--navbar-height);
         transition: top 0.4s ease-in;
         animation: navbarNotiShow 0.3s;
+        -webkit-animation: navbarNotiShow 0.3s;
+        -moz-animation: navbarNotiShow 0.3s;
     }
     @keyframes navbarNotiShow {
         from{
@@ -49,6 +51,9 @@
     .sidebar-container--active{
         transform: translateX(0); 
         width: var(--sidebar-width);
+    }
+    .sidebar-container li.sidebar-title {
+        display: none;
     }
     .report-analysis{
         margin-bottom: 30px;
